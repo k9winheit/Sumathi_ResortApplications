@@ -17,6 +17,7 @@ namespace ViewModel
         public string Description { get; set; }       
         public List<string> RoomTypes { get; set; }
         public string SelectedRoomType { get; set; }
+        public string RoomType { get; set; }
         public int RoomFloor { get; set; }
         public double RoomRate { get; set; }
         public bool IsRemoved { get; set; }

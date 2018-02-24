@@ -41,5 +41,15 @@ namespace Sumathi_ResWebApi.Controllers
             reservationManager = new ReservationManager();
             return reservationManager.GetEmptyReservationOrder();
         }
+
+        [AllowAnonymous]
+        //[AllowAnonymous]
+        [HttpGet]
+        [Route("GetReservationDetails")]
+        public RoomReservationOrderViewModel GetReservationDetails(int res_id)
+        {
+            reservationManager = new ReservationManager();
+            return reservationManager.GetReservationDetails(res_id);
+        }
     }
 }

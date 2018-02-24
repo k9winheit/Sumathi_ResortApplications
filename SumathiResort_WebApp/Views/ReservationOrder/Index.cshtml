@@ -6,8 +6,7 @@
 
 <section class="content-header">
     <h1>
-        Dashboard
-        <small>Control panel</small>
+        Reservation Order        
     </h1>
     <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
@@ -19,97 +18,110 @@
 <section class="content">
 
     <!-- Main row -->
-    <div ng-controller="roomcontroller">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="col-md-6 form-group">
-                    <label class="col-md-4">Reservation No.</label>
-                    <div class="col-md-8">
-                        <input type="text" class="form-control" ng-model="Room.RoomId" />
+    <div ng-controller="reservationordercontroller">
+        <form name="form">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-6 form-group">
+                        <label class="col-md-4">Reservation No.</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" ng-model="GuestDetails.ResNo" ng-required="true" />
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6 form-group">
-                    <label class="col-md-4">Title</label>
-                    <div class="col-md-8">
-                        <input type="text" class="form-control" ng-model="Room.Description" />
+                    <div class="col-md-6 form-group">
+                        <label class="col-md-4">Title</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" ng-model="GuestDetails.Title" />
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-6 form-group">
-                    <label class="col-md-4">First Name</label>
-                    <div class="col-md-8">
-                        <input type="text" class="form-control" ng-model="Room.Description" />
-                    </div>
-                </div>
-                <div class="col-md-6 form-group">
-                    <label class="col-md-4">Last name</label>
-                    <div class="col-md-8">
-                        <input type="text" class="form-control" ng-model="Room.Description" />
-                    </div>
-                </div>
-                <div class="col-md-6 form-group">
-                    <label class="col-md-4">Address</label>
-                    <div class="col-md-8">
-                        <textarea class="form-control"></textarea>
-                    </div>
-                </div>
-                <div class="col-md-6 form-group">
-                    <label class="col-md-4">Contact No</label>
-                    <div class="col-md-8">
-                        <input type="text" class="form-control" ng-model="Room.RoomFloor" />
-                    </div>
-                </div>
-                <div class="col-md-6 form-group">
-                    <label class="col-md-4">Check-In date</label>
-                    <div class="col-md-5 input-group">
-                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                        <input id="checkindate" type="text" class="form-control" ng-model="Room.RoomRate" />
-                    </div>
-                </div>
-                <div class="col-md-6 form-group">
-                    <label class="col-md-4">Check-Out Date</label>
-                    <div class="col-md-5 input-group">
-                        <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
-                        <input id="checkoutdate" type="text" class="form-control" ng-model="Room.RoomRate" />
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-12">
-                <div class="col-md-4 form-group">
-                    <label class="col-md-4">Room No</label>
-                    <div class="col-md-8">
-                        <select class="form-control" data-ng-options="type for type in Room.RoomTypes" ng-model="Room.SelectedRoomType"></select>
-                    </div>
-                </div>
-                <div class="col-md-4 form-group">
-                    <label class="col-md-4">Rate</label>
-                    <label class="col-md-4">{{Room.SelectedRoomType}}</label>
-                </div>
-                <div class="col-md-4 form-group">
-                <input type="button" value="Add" class="btn btn-default" />
-            </div>
-            </div>
-            <div class="col-md-12">
-                <table class="table table-striped col-md-12">
-                    <tr>
-                        <th></th>
-                        <th>Room No</th>
-                        <th>Description</th>
-                        <th>Rate</th>
-                    </tr>
-                    <tr ng-repeat="room in Rooms">
-                        <td><a class="btn btn-lg btn-danger"><i class="fa fa-trash"></i></a></td>
-                        <td>{{room.RoomId}}</td>
-                        <td>{{room.Description}}</td>
-                        <td>{{room.RoomRate}}</td>
-                    </tr>
+                    <div class="col-md-6 form-group">
+                        <label class="col-md-4">First Name</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" name ="firstName" ng-model="GuestDetails.FirstName" ng-required="true" />
+                        </div>
+                        <div class="error" ng-show="form.firstName.$dirty && form.firstName.$invalid  || form.$submitted || form.firstName.$touched" style="color:red;font-size:13px;text-align:left">
+                            <medium class="error" ng-show="form.firstName.$error.required">First Name is required</medium>
+                        </div>
 
-                </table>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label class="col-md-4">Last name</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" ng-model="GuestDetails.LastName" />
+                        </div>
+                        <div class="error" ng-show="form.firstName.$dirty && form.firstName.$invalid  || form.$submitted || form.firstName.$touched" style="color:red;font-size:13px;text-align:left">
+                            <medium class="error" ng-show="form.firstName.$error.required">Last Name is required</medium>
+                        </div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label class="col-md-4">Address</label>
+                        <div class="col-md-8">
+                            <textarea class="form-control" ng-model="GuestDetails.Address"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label class="col-md-4">Contact No</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" ng-model="GuestDetails.ContactNo" />
+                        </div>
+                        <div class="error" ng-show="form.firstName.$dirty && form.firstName.$invalid  || form.$submitted || form.firstName.$touched" style="color:red;font-size:13px;text-align:left">
+                            <medium class="error" ng-show="form.firstName.$error.required">Contact No is required</medium>
+                        </div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label class="col-md-4">Check-In date</label>
+                        <div class="col-md-5 input-group">
+                            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                            <input id="checkindate" type="text" class="form-control" ng-model="Room.CheckInDate" />
+                        </div>
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <label class="col-md-4">Check-Out Date</label>
+                        <div class="col-md-5 input-group">
+                            <div class="input-group-addon"><i class="fa fa-calendar"></i></div>
+                            <input id="checkoutdate" type="text" class="form-control" ng-model="Room.CheckOutDate" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-4 form-group">
+                        <label class="col-md-4">Room No</label>
+                        <div class="col-md-8">
+                            <select class="form-control" data-ng-options="room.RoomId for room in RoomNoList" ng-model="SelectedRoom"></select>
+                        </div>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <label class="col-md-4">Rate</label>
+                        <label class="col-md-4">{{SelectedRoom.RoomRate}}</label>
+                    </div>
+                    <div class="col-md-4 form-group">
+                        <input type="button" value="Add" class="btn btn-default" ng-click="add(SelectedRoom)" />
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <table class="table table-striped col-md-12">
+                        <tr>
+                            <th></th>
+                            <th>Room No</th>
+                            <th>Description</th>
+                            <th>Rate</th>
+                        </tr>
+                        <tr ng-repeat="room in SelectedRooms">
+                            <td><a class="btn btn-lg btn-danger" ng-click="delete(room)"><i class="fa fa-trash"></i></a></td>
+                            <td>{{room.RoomId}}</td>
+                            <td>{{room.Description}}</td>
+                            <td>{{room.RoomRate}}</td>
+                        </tr>
+
+                    </table>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-md-10"></div>
+                    <input type="button" class="form-control btn btn-primary col-md-2" value="Save" ng-click="saveorder()" ng-disabled="form.$invalid" />
+                    <input type="button" class="form-control btn btn-primary col-md-2" value="Search" ng-click="search(GuestDetails.ResNo)" />
+                </div>
             </div>
-            <div class="col-md-12">
-                <div class="col-md-10"></div>
-                <input type="button" class="form-control btn btn-primary col-md-2" value="Save" ng-click="saveroom(Room)" />
-            </div>
-        </div>
+        </form>
     </div>
     <!-- /.row (main row) -->
 </section>

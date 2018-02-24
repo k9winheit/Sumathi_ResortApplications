@@ -117,7 +117,7 @@ namespace Business.Managers
             var roomsVm = new List<RoomViewModel>();
             try
             {
-                string getRoomDataReader = "SELECT room_no,room_desc,room_floor FROM tblr_room";
+                string getRoomDataReader = "SELECT room_no,room_desc,room_type,room_floor,room_rate FROM tblr_room";
                 MySqlDataReader roomReader = DbConnetClass.getData(getRoomDataReader);
                 while (roomReader.Read())
                 {
@@ -125,8 +125,9 @@ namespace Business.Managers
                     {
                         RoomId = int.Parse(roomReader["room_no"].ToString()),
                         Description = roomReader["room_desc"].ToString(),
-                        //RoomType = ViewModel.Enums.RoomType,
+                        RoomType = roomReader["room_type"].ToString(),
                         RoomFloor = int.Parse(roomReader["room_floor"].ToString()),
+                        RoomRate = double.Parse(roomReader["room_rate"].ToString())
                     };
                     roomsVm.Add(room);
                 }

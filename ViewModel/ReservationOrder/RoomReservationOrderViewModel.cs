@@ -12,6 +12,7 @@ namespace ViewModel.ReservationOrder
         public RoomReservationOrderViewModel()
         {
             roolListVm = new List<RoomViewModel>();
+            selectedRooms = new List<RoomViewModel>();
         }
 
         public int ResNo { get; set; }
@@ -23,7 +24,9 @@ namespace ViewModel.ReservationOrder
         public DateTime CheckInDate { get; set; }
         public DateTime CheckOutDate { get; set; }
         public List<RoomViewModel> roolListVm { get; set; }
-        
+        public List<RoomViewModel> selectedRooms { get; set; }
+
+
 
     }
 }

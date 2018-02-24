@@ -130,6 +130,14 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="Toaster, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Toaster.2.1.10711.1\lib\net40\Toaster.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ToolBelt, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ToolBelt.1.8.11129.1\lib\net45\ToolBelt.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -226,6 +234,7 @@
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\ionicons.css" />
     <Content Include="Content\skin-blue.css" />
+    <Content Include="Content\ui-bootstrap-custom-2.5.0-csp.css" />
     <Content Include="Content\_all-skins.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
@@ -1062,6 +1071,8 @@
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\ui-bootstrap-custom-2.5.0.js" />
+    <Content Include="Scripts\ui-bootstrap-custom-tpls-2.5.0.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
