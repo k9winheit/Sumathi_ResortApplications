@@ -5,6 +5,10 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sumathi_ResWebApi", "Sumathi_ResWebApi\Sumathi_ResWebApi.csproj", "{30086EAA-826E-46AB-A45D-057D58906718}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business", "Business\Business.csproj", "{C4782C81-4926-4F07-80F2-1F261404D922}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModel", "ViewModel\ViewModel.csproj", "{491995D9-7293-474C-88EA-5821DBEA5E2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{30086EAA-826E-46AB-A45D-057D58906718}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{30086EAA-826E-46AB-A45D-057D58906718}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{30086EAA-826E-46AB-A45D-057D58906718}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4782C81-4926-4F07-80F2-1F261404D922}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4782C81-4926-4F07-80F2-1F261404D922}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4782C81-4926-4F07-80F2-1F261404D922}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4782C81-4926-4F07-80F2-1F261404D922}.Release|Any CPU.Build.0 = Release|Any CPU
+		{491995D9-7293-474C-88EA-5821DBEA5E2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{491995D9-7293-474C-88EA-5821DBEA5E2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{491995D9-7293-474C-88EA-5821DBEA5E2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{491995D9-7293-474C-88EA-5821DBEA5E2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
