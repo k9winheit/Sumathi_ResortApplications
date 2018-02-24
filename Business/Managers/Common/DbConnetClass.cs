@@ -34,8 +34,9 @@ namespace Business.Managers.Common
                 return null;
             }
         }
-        public static void setData(String q)
+        public static int setData(String q)
         {
+            int result = 0;
             MySqlCommand com;
             MySqlDataReader dr;
             connect = DbConnetClass.DBConnect();
@@ -48,6 +49,7 @@ namespace Business.Managers.Common
 
                 if (dr.RecordsAffected > 0)
                 {
+                    result = dr.RecordsAffected;
                     // MessageBox.Show("Record Successfuly Saved");
                 }
                 closeConnection();
@@ -62,6 +64,8 @@ namespace Business.Managers.Common
                 //error.createErrorLog(e.Message, e.Source, "Data Sending Error");
                 closeConnection();
             }
+
+            return result;
         }
         public static MySqlDataReader getData(String q)
         {

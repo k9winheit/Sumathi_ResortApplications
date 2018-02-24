@@ -1,0 +1,88 @@
+﻿
+@{
+    ViewBag.Title = "Rooms";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="content-header">
+    <h1>
+        Dashboard
+        <small>Control panel</small>
+    </h1>
+    <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li class="active">Rooms</li>
+    </ol>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+    <!-- Main row -->
+    <div ng-controller="roomcontroller">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6 form-group">
+                    <label class="col-md-4">Room Number</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" ng-model="Room.RoomId" />
+                    </div>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label class="col-md-4">Description</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" ng-model="Room.Description" />
+                    </div>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label class="col-md-4">Room Type</label>
+                    <div class="col-md-8">
+                        <select class="form-control" data-ng-options="type for type in Room.RoomTypes" ng-model="Room.SelectedRoomType"></select>
+                   
+                     </div>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label class="col-md-4">Floor</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" ng-model="Room.RoomFloor" />
+                    </div>
+                </div>
+                <div class="col-md-6 form-group">
+                    <label class="col-md-4">Rate</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" ng-model="Room.RoomRate"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <table class="table table-striped col-md-12">
+                    <tr>
+                        <th>Room</th>
+                        <th>Description</th>
+                        <th>Type</th>
+                        <th>Floor</th>
+                        <th>Rate</th>
+                    </tr>
+                    <tr ng-repeat="room in Rooms">
+                        <td>{{room.RoomId}}</td>
+                        <td>{{room.Description}}</td>
+                        <td>{{room.RoomType}}</td>
+                        <td>{{room.RoomFloor}}</td>
+                        <td>{{room.RoomRate}}</td>
+                    </tr>
+
+                </table>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-10"></div>
+                <input type="button" class="form-control btn btn-primary col-md-2" value="Save" ng-click="saveroom(Room)" />
+            </div>
+        </div>
+    </div>
+    <!-- /.row (main row) -->
+
+</section>
+<!-- /.content -->
+
+<div></div>
+

@@ -4,11 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using ViewModel;
+using ViewModel.Room;
 
 namespace Business.Managers.Interfaces
 {
     public interface IRoomManager
     {
-        List<RoomViewModel> GetAllRooms();
+        RoomResultViewModel GetAllRooms();
+        RoomResultViewModel SaveRoomDetails(RoomViewModel roomVm);
     }
 }

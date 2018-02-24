@@ -7,6 +7,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using ViewModel;
+using ViewModel.Room;
 
 namespace Sumathi_ResWebApi.Controllers
 {
@@ -31,10 +32,24 @@ namespace Sumathi_ResWebApi.Controllers
         [AllowAnonymous]
         [HttpGet]
         [Route("GetRoomsDetails")]
-        public List<RoomViewModel> GetRoomsDetails()
+        public RoomResultViewModel GetRoomsDetails()
         {
             roomManager = new RoomManager();
             return roomManager.GetAllRooms();
+        }
+
+        #endregion
+
+        #region Post Methods
+
+        [AllowAnonymous]
+        //[AllowAnonymous]
+        [HttpPost]
+        [Route("SaveRoom")]
+        public RoomResultViewModel SaveRoom(RoomViewModel roomVm)
+        {
+            roomManager = new RoomManager();
+            return roomManager.SaveRoomDetails(roomVm);
         }
 
         #endregion
